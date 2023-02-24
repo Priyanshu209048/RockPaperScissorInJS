@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        alert("Welcome to the Rock Paper Scissor Game: ");
+        var chance = parseInt(prompt("Enter number of rounds: "));
+        let uPoint = 0;
+        let cPoint = 0;
+
+        for(var i = 0; i < chance; i++){
+            var player = prompt("Select from these three 1.Rock 2.Paper 3.Scissor");
+            // var robot = prompt("Enter number of rounds: ");
+            var robotChoose = Math.floor((Math.random() * 3) + 1);
+            var robot = "";
+            if (robotChoose == 1){
+                robot += "Rock";
+            }
+            else if (robotChoose == 2) {
+                robot += "Paper";
+            }
+            else {
+                robot += "Scissor";
+            }
+
+            if(player == robot){
+                alert("Match Draw");
+                document.write("Match Draw </br>")
+            } else if((player == "Paper" || "paper" || "PAPER" && robot == "Rock" || "rock" || "ROCK") || (player == "Scissor" || "scissor" || "SCISSOR" && robot == "Paper" || "paper" || "PAPER") || (player == "Rock" || "rock" || "ROCK" && robot == "Scissor" || "scissor" || "SCISSOR")){
+                alert("You Win");
+                document.write("You Win </br>")
+                uPoint++;
+            } else if((robot == "Paper" || "paper" || "PAPER" && player == "Rock" || "rock" || "ROCK") || (robot == "Scissor" || "scissor" || "SCISSOR" && player == "Paper" || "paper" || "PAPER") || (robot == "Rock" || "rock" || "ROCK" && player == "Scissor" || "scissor" || "SCISSOR")){
+                alert("Robot Win");
+                document.write("Robot Win </br>")
+                cPoint++;
+            }
+
+        }
+
+        if(uPoint > cPoint){
+            alert("Congratulation You Won the match!!");
+        } else if(uPoint < cPoint){
+            alert("Better Luck Next Time!!!");
+        } else{
+            alert("Match Draw");
+        }
+
+    </script>
+    
+</body>
+</html>
